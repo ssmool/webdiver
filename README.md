@@ -92,11 +92,11 @@ Collection timestamp
 #asytrick
 Project available at: github.com/ssmool/webdiver
 
-###🤝 Contributions
+**🤝 Contributions**
 
 Contributions are welcome! Feel free to open issues, submit pull requests, or reach out by email.
 
-###📫 Contact
+**📫 Contact**
 
 - Author: **#asytrick**  
 - Repository: [github.com/webdiver](https://github.com/ssmool/webdiver)  
