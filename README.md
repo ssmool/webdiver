@@ -1,3 +1,15 @@
+Web Diver
+
+Web Diver is a simple and powerful web crawling and search automation tool for the World Wide Web, developed in Python. Web Diver's main purpose is to read and archive content from specific URLs, saving the data in a structured format in a local SQLite database.
+
+---
+
+## 🚀 Installation
+
+First of all, make sure you're using Python 3.6+ and have pip updated.
+
+### Install via pip:
+```bash
 pip install webdiver_v1
 
 pip install requests beautifulsoup4 pandas
