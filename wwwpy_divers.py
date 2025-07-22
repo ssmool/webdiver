@@ -1,4 +1,3 @@
-pip install requests beautifulsoup4 sqlite3 pandas
 import requests
 import sqlite3
 import schedule
