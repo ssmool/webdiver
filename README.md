@@ -101,3 +101,7 @@ Contributions are welcome! Feel free to open issues, submit pull requests, or re
 - Author: **#asytrick**  
 - Repository: [github.com/webdiver](https://github.com/ssmool/webdiver)  
 - Email: **eusmool@gmail.com**
+
+## 📦 CineOS Barsotti @buskplay - RAG PARTS:
+
+Webdiver is a part of the CineOS Barsotti @buskplay - Unix Like project and aligned with global goals for decentralized AI-assisted creative ORM Development, Generative Software Assembly, Researchs, Works Suits and so much more pourposes for SW Deploy and support for(AI Orquestrators by LLMs and GEN-AI and OS Support Documentation) by generative creativity.
