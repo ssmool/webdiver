@@ -1,7 +1,7 @@
 ## ⛵ Web Diver - WebScrawling
 ![Python Webdiver Webscrawling Logo](./assets/webdivervas.gif)
 
-**Version:** 1.0 Beta
+**Version:** 2.0 Alpha
 
 **Status:** Under Development  
 
@@ -23,7 +23,7 @@ First of all, make sure you're using Python 3.6+ and have pip updated.
 
 ### Install via pip:
 ```bash
-pip install webdiver
+#pip install webdiver-2.0 - under release 2.0 Alpha Version
 ```
 
 ⚙️ Basic Functionality
@@ -43,40 +43,40 @@ Sets the URL that will be used in the web content reading and search task.
 Example:
 
 ```bash
-set_task_uri("https://example.com")
+www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
 ```
 
 ### www_diver()
-Reads the URL defined with set_task_uri() and stores the extracted information in the SQLite database.
+Reads the URL defined with www_diver_add_task() and stores the extracted information in the SQLite database.
 
 Example:
 
 ```bash
-www_diver()
+_type = ['_text','_html','_filter']
+www_diver_start('db.sqlite',_type[0])
 ```
 
-### set_task(uri: str, hour: int, minute: int)
+### set_task(uri: str, hour: int, minute: int) - *COMMING SOON - UNDER PREVIEW REVIEW
 
-chedules a new web crawling task for a specific time, setting the URL, hour, and minute for automatic execution.
+Schedules a new web crawling task for a specific time, setting the URL, hour, and minute for automatic execution.
 
 Example:
 
 ```bash
-set_task("https://example.com/news", 14, 30)
+#set_task("https://example.com/news", 14, 30)
 ```
 
 💡 Usage Examples
 
 ```bash
-from webdiver import set_task_uri, www_diver, sql_setup, set_task
-sql_setup("mydata.db")
-set_task_uri("https://example.com")
-www_diver()
+from webdiver.web_diver import *
+www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
+www_diver_start('db.sqlite','_text')
 ```
 
 ```bash
-## Task Scheduling
-set_task("https://example.com", 12, 45)
+## Task Scheduling - *COMMING SOON - UNDER PREVIEW REVIEW
+#set_task("https://example.com", 12, 45)
 ```
 
 🗃️ Database
