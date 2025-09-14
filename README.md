@@ -37,7 +37,7 @@ Example:
 www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
 ```
 
-### www_diver_start()
+### www_diver_start(db: str, type: str['_text' | '_html' | '_filter'))
 Reads the URL defined with www_diver_add_task() and stores the extracted information in the SQLite database.
 
 Example:
