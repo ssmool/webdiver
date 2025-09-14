@@ -28,16 +28,7 @@ First of all, make sure you're using Python 3.6+ and have pip updated.
 
 ⚙️ Basic Functionality
 
-### sql_setup(db_name: str)
-Creates and configures a .db file to keep records of searches performed by Web Diver.
-
-Example:
-
-```bash
-sql_setup("webdiver_archive.db")
-```
-
-### set_task_uri(url: str)
+### www_diver_add_taski(url: str)
 Sets the URL that will be used in the web content reading and search task.
 
 Example:
@@ -46,7 +37,7 @@ Example:
 www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
 ```
 
-### www_diver()
+### www_diver_start()
 Reads the URL defined with www_diver_add_task() and stores the extracted information in the SQLite database.
 
 Example:
