@@ -28,7 +28,7 @@ First of all, make sure you're using Python 3.6+ and have pip updated.
 
 ⚙️ Basic Functionality
 
-### www_diver_add_taski(url: str)
+### www_diver_add_task(url: str)
 Sets the URL that will be used in the web content reading and search task.
 
 Example:
