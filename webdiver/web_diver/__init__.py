@@ -3,6 +3,8 @@ import requests
 import sqlite3
 import schedule
 import time
+from datetime import datetime
+import threading
 from bs4 import BeautifulSoup
 
 _www_uri = 'false'
@@ -11,6 +13,11 @@ _data = 'false'
 _data_r = ''
 _uri_www_diver = []
 __dom_filter = []
+__www_task_schudele = 'false'
+__www_task_schudele_type = 'false'
+__www_task_schudele_filter = []
+__hour = 0
+__minute = 0
 
 def set_task_uri(uri):
 	global _www_uri
@@ -104,6 +111,22 @@ def www_diver_download():
 		_r = {e}
 	return _r
 
+def www_diver_shedule():
+	print(f'*uri:{__www_task_schudele}')
+	set_task_uri(__www_task_schudele)
+	print(f'*#uri:{__www_task_schudele}')
+	match(__www_task_schudele_type):
+		case "_text":
+			www_diver_text()
+		case "_html":
+			www_diver_html()
+		case "_filter":
+			for _fil_x0 in __www_task_schudele_filter:
+				_fil_x0x0 = _fil_x0["tag"]
+				_fil_x0x1 = _fil_x0["class_tag"]
+				www_add_filter(_fil_x0x0,_fil_x0x0)
+			www_diver()
+
 def get_task():
 	_r = _data
 	return _r
@@ -113,7 +136,7 @@ def sql_setup(db_name):
 	_www_db_sql = db_name
 	conn = sqlite3.connect(_www_db_sql)
 	cursor = conn.cursor()
-	cursor.execute('CREATE TABLE IF NOT EXISTS quotes (id INTEGER PRIMARY KEY, quote TEXT, author TEXT)')
+	cursor.execute('CREATE TABLE IF NOT EXISTS quotes (id INTEGER PRIMARY KEY, quote TEXT, author TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)')
 	# Commit and close the connection
 	conn.commit()
 	conn.close()
@@ -126,12 +149,34 @@ def sql_add(_data):
 	conn.commit()
 	conn.close()
 
-def set_task(uri, hour, minute):
-	set_task_uri(uri)
-	schedule.every().hour.at(check_schudell).do(www_diver)
-	while True:
-		schedule.run_pending()
-		time.sleep(1)
+def set_task(uri, hour, minute, _type, _filter='false'):
+	global __www_task_schudele
+	global __www_task_schudele_type
+	global __www_task_schudele_filter
+	global __hour
+	global __minute
+	__www_task_schudele = str(uri)
+	__www_task_schudele_type = _type
+	__hour = str(hour)
+	__minute = str(minute)
+	if(_filter != 'false'):
+		__www_task_schudele_filter = _filter
+	_t = threading.Thread(target=thread_set_task)
+	_t.start()
+
+def thread_set_task():
+	__true = True
+	while __true:
+		__check_schudell = f"{__hour}:{__minute}"
+		__time_curr = datetime.now().strftime("%H:%M")
+		if(__check_schudell == str(__time_curr)):
+			_w = f"CHECK:{str(__check_schudell)} == {str(__time_curr)}"
+			print(_w)
+			www_diver_shedule()
+			_w = f"CHECKED:{str(__check_schudell)} == {str(__time_curr)}"
+			print(_w)
+			__true = False
+		time.sleep(10)
 
 def rem_html_tag(_content):
 	global _data_r
