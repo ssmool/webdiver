@@ -7,7 +7,7 @@
 
 **Author:** #asytrick
 
-**Website:** [github.com/wendiver](https://github.com/ssmool/webdiver)  
+**Website:** [github.com/webdiver](https://github.com/ssmool/webdiver)  
 
 **Contact:** eusmool@gmail.com  
 
