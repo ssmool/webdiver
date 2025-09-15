@@ -23,6 +23,7 @@ First of all, make sure you're using Python 3.6+ and have pip updated.
 
 ### Install via pip:
 ```bash
+pip install requests beautifulsoup4 pandas
 #pip install webdiver-2.0 - under release 2.0 Alpha Version
 ```
 
