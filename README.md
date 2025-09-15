@@ -54,7 +54,7 @@ Schedules a new web crawling task for a specific time, setting the URL, hour, an
 Example:
 
 ```bash
-#set_task("https://example.com/news", 14, 30)
+set_task("https://example.com/news", '14', '30', '_text')
 ```
 
 💡 Usage Examples
@@ -63,11 +63,6 @@ Example:
 from webdiver.web_diver import *
 www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
 www_diver_start('db.sqlite','_text')
-```
-
-```bash
-## Task Scheduling - *COMMING SOON - UNDER PREVIEW REVIEW
-#set_task("https://example.com", 12, 45)
 ```
 
 🗃️ Database
