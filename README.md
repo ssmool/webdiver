@@ -1,7 +1,7 @@
 ## ⛵ Web Diver - WebScrawling
 ![Python Webdiver Webscrawling Logo](./assets/webdivervas.gif)
 
-**Version:** 2.0 Alpha
+**Version:** 4.0 Alpha
 
 **Status:** Under Development  
 
@@ -24,7 +24,7 @@ First of all, make sure you're using Python 3.6+ and have pip updated.
 ### Install via pip:
 ```bash
 pip install requests beautifulsoup4 pandas
-#pip install webdiver-2.0 - under release 2.0 Alpha Version
+pip install WEBDIVER==4.0
 ```
 
 ⚙️ Basic Functionality
@@ -47,6 +47,22 @@ Example:
 _type = ['_text','_html','_filter']
 www_diver_start('db.sqlite',_type[0])
 ```
+
+Webdiver with lists:
+
+```bash
+from webdiver.web_diver import *
+
+_v0x = ['http://www.github.com/ssmool/webdiver#_html','http://www.github.com/ssmool/radgram#_text','http://www.github.com/ssmool/cinewiz/raw/main/assets/cinewiz_cover.gif#_download']
+
+for _c0x in _v0x:
+    _c0x_x01 = _v0x.split('#')
+    _c0x_x0 = _c0x_x01[0]
+    _c0x_x1 = _c0x_x01[1]
+    www_diver_add_task(_c0x_x0)
+    www_diver_start('db_plugwarez_0x1.sqlite',_c0x_x1)
+```
+
 
 ### set_task(uri: str, hour: int, minute: int) - *COMMING SOON - UNDER PREVIEW REVIEW
 
