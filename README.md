@@ -56,7 +56,7 @@ from webdiver.web_diver import *
 _v0x = ['http://www.github.com/ssmool/webdiver#_html','http://www.github.com/ssmool/radgram#_text','http://www.github.com/ssmool/cinewiz/raw/main/assets/cinewiz_cover.gif#_download']
 
 for _c0x in _v0x:
-    _c0x_x01 = _v0x.split('#')
+    _c0x_x01 = _c0x.split('#')
     _c0x_x0 = _c0x_x01[0]
     _c0x_x1 = _c0x_x01[1]
     www_diver_add_task(_c0x_x0)
