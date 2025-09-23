@@ -76,7 +76,7 @@ set_task("https://example.com/news", '14', '30', '_text')
 💡 Usage Examples
 
 ```bash
-from webdiver.web_diver import *
+import web_diver as _webdiver
 www_diver_add_task('https://electronics.howstuffworks.com/tv.htm')
 www_diver_start('db.sqlite','_text')
 ```
